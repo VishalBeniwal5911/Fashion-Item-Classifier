@@ -1,76 +1,75 @@
-# Fashion-Item-Classifier
 
-1. Introduction
-This project focuses on classifying fashion items into one of ten predefined categories using a feedforward neural network. The model is trained on image data derived from grayscale 28x28 pixel images and is capable of recognizing items such as T-shirts, trousers, and shoes.
+# 👕 Clothes Name Prediction using Neural Network
 
-________________________________________
-2. Problem Statement
+This project uses a simple neural network to predict the type of clothing item (e.g., T-shirt, trouser, sneaker) from image data. The dataset is uploaded as a ZIP file containing a CSV, and the model is built and trained using TensorFlow and Keras.
 
-To develop and evaluate a machine learning model that can classify grayscale images of clothing items into 10 categories with high accuracy.
-________________________________________
-3. Objectives
-•   Load and preprocess the dataset containing fashion item images and labels.
-•   Build a neural network model using TensorFlow/Keras.
-•   Train the model on the dataset and validate performance.
-•   Evaluate the trained model using classification metrics.
-•   Visualize results using confusion matrix and sample predictions.
+## 📂 Project Structure
 
+- `zipfile` to unzip uploaded dataset
+- `pandas` and `numpy` for data handling
+- `matplotlib` and `seaborn` for visualization
+- `sklearn` for preprocessing and evaluation
+- `tensorflow.keras` for building the neural network
 
-________________________________________
+## 🧠 Model Architecture
 
+- Input Layer: 784 neurons (flattened 28x28 image)
+- Dense Layer 1: 128 neurons, ReLU activation
+- Dense Layer 2: 64 neurons, ReLU activation
+- Output Layer: 10 neurons, Softmax activation
 
-4. Methodology
+## 🧾 Steps in the Notebook
 
-•	Upload and unzip the dataset.
-•	 Load the data from a CSV file into a Pandas Data Frame.
-•	Normalize pixel values and one-hot encode the labels.
-•	Split the dataset into training and testing subsets.
-•	Design and compile a neural network model.
-•	Train the model for 10 epochs with validation.
-•	Evaluate the model using a confusion matrix and classification report.
-•	Visualize sample test predictions.
-________________________________________
-5. Data Preprocessing
-The dataset is cleaned and prepared as follows
-●	  The dataset was read from a CSV file extracted from a ZIP archive.
-●	  Pixel values were normalized by dividing by 255.
-●	  Labels were one-hot encoded using to categorical.
-●	  Data was split into 80% training and 20% testing sets.
-●	  Image data reshaped for visualization purposes (28x28 format).
+1. **Upload ZIP File**  
+   Upload a ZIP file containing the CSV dataset (like Fashion MNIST).
 
+2. **Unzip and Read Data**  
+   Extract and load the CSV into a DataFrame.
 
-________________________________________
-6. Model Implementation
-●	A neural network was built using the Keras Sequential API.
-●	Architecture:
-○	Input Layer: 784 neurons (flattened 28x28 images)
-○	Hidden Layer 1: 128 neurons, ReLU activation
-○	Hidden Layer 2: 64 neurons, ReLU activation
-○	Output Layer: 10 neurons, Softmax activation
-●	Optimizer: Adam
-●	Loss Function: Categorical Crossentropy
-●	Trained for 10 epochs using a batch size of 128 and a validation split of 10%.
-________________________________________
-7. Evaluation Metrics
-●	Accuracy: Overall percentage of correct predictions.
-●	Precision, Recall, F1-Score: Computed for each of the 10 classes using classification report.
-●	Confusion Matrix: Used to visualize correct and incorrect classifications across all categories.
-________________________________________
-8. Results and Analysis
-●	The model provided reasonable performance on the test set.
-●	The Random Forest model provided good classification accuracy and balanced performance across risk categories. 
-●	The confusion matrix helped in understanding the prediction distribution.
+3. **Preprocess Data**  
+   Normalize pixel values and convert labels to categorical.
 
-________________________________________
-9. Conclusion
-●	The trained model achieved good accuracy and generalization.
-●	The confusion matrix revealed specific classes with high misclassification, such as T-shirts and shirts.
-●	The classification report highlighted balanced performance across classes, with some variation depending on class similarity.
-●	Visualization of sample predictions showed clear model understanding for most categories.
-________________________________________
-10. References
-●	 TensorFlow and Keras documentation
-●	  scikit-learn metrics documentation
-●	  pandas and matplotlib documentation
-●	  Fashion MNIST Dataset
-●	  Seaborn visualization library
+4. **Train-Test Split**  
+   80% for training, 20% for testing.
+
+5. **Build and Train Model**  
+   Train a simple neural network using Keras.
+
+6. **Evaluate Model**  
+   Predict and generate a confusion matrix and classification report.
+
+7. **Visualize Predictions**  
+   Display 10 sample predictions with actual and predicted labels.
+
+## 🧪 Output
+
+- 📊 Confusion Matrix for evaluation  
+- 📄 Classification Report (Precision, Recall, F1-Score)  
+- 🖼️ Visual output of 10 sample predictions
+
+## 📦 Dependencies
+
+Install these Python libraries:
+
+```bash
+pip install pandas numpy matplotlib seaborn scikit-learn tensorflow
+```
+
+## 🔍 Sample Labels
+
+```
+0: T-shirt/top
+1: Trouser
+2: Pullover
+3: Dress
+4: Coat
+5: Sandal
+6: Shirt
+7: Sneaker
+8: Bag
+9: Ankle boot
+```
+
+## 💡 Usage
+
+Run the code in **Google Colab**. Make sure to upload your ZIP file containing the CSV dataset when prompted.
